@@ -3,15 +3,15 @@
 </button>
 <button class="fz-60 p-50 m-20"
  (click)="decrease()"
- [disabled]="cannotDecrease">- 1
+  [disabled]="cannotDecrease$ | async">- 1
 </button>
 <button class="fz-60 p-50 m-20"
  (click)="clear()"
- [disabled]="cannotDecrease">= 0
+  [disabled]="cannotDecrease$ | async">= 0
 </button>
 
 <p class="fz-60">
-  Counter = {{counter}}
+  Counter = {{count$ | async}}
 </p>
 
 <p *ngIf="updatedAt" class="fz-60">
